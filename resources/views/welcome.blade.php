@@ -158,8 +158,8 @@
             };
         </script>  --}}
 
-
-        <ul>
+    <div class="row vh-100 d-flex justify-content-left d-flex align-items-left">
+        <ul style="color:Black;font-size:20px; margin-left: 50px;" >
             <li>this url is not working on postman method
 
                 <a href="https://sandbox-api.espay.id/rest/biller/inquirytransaction">
@@ -171,6 +171,11 @@
                 we already merchant by still having this error
                 Error : [0031] Rejected, Communication error with 
                 <a href="https://sandbox-portal.espay.id/">DASHBOARD</a>
+            </li>
+            <li>
+                Using embed kit we are having an IP address rejected/ unregistered issue
+                <br><code> {"rq_uuid":"PAIDBAQ721659","rs_datetime":"2023-04-13 15:21:41","error_code":"0601","error_message":"IP Address rejected \/ unregistered"}</code><br>
+               does the IP in <a href="https://sandbox-portal.espay.id/espay/community/edit/comm_id/">MERCHANT->New merchant->edit</a> has to do with this?
             </li>
             <li>
                 what is the usage of this url
@@ -186,6 +191,7 @@
                 NEED TO REQUEST A full work flow / demo using postman or embed kit
             </li>
         </ul>
+    </div>
     </body>
     @stack('scripts')
 </html>

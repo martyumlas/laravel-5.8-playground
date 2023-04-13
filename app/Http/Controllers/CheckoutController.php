@@ -32,7 +32,7 @@ class CheckoutController extends Controller
             $client = new Client();
             try {
                 $response = $client->post('https://sandbox-api.espay.id/rest/digitalpay/pushtopay', [
-                   
+                    'form_params' => ['rq_uuid' => 'PAIDBAQ721659','trx_status' => 'S']
                 ]);
     
             } catch(Exception $e) {

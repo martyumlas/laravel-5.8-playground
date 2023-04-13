@@ -11,6 +11,7 @@
             key: "c120ee852ac32f5ef97077276ac10e6c",
             paymentId: "{{$invoice}}",
             backUrl: "http://localhost:8000/",
+            paymentAmount: 75000.00
         },
         sgoPlusIframe = document.getElementById("sgoplus-iframe");
         if (sgoPlusIframe !== null) sgoPlusIframe.src = SGOSignature.getIframeURL(data);
