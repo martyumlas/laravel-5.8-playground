@@ -8,11 +8,11 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #eee;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -96,14 +96,51 @@
             </div>
         </div> --}}
 
-        <form id="myform" method="post" action="{{ url('/checkout') }}">
+        {{-- <form id="myform" method="post" action="{{ url('/checkout') }}">
         {{ csrf_field() }}
             <input type="text" name="Invoice" value="P123"><br>
             <input type="number" name="price" value="23"><br>
             <input type="submit" name="Purchase">
 
-        </form>
-        <!-- <iframe id="sgoplus-iframe" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-forms" src="" scrolling="no" frameborder="0">
+        </form> --}}
+
+            <div class="row vh-100 d-flex justify-content-center d-flex align-items-center">
+               
+                    <div class="col-md-4">
+                        @if (Request::is('/'))
+                        <form id="myform" method="post" action="{{ url('/payment') }}" class="border border-primary p-3">
+                            @csrf
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Invoice</label>
+                                <input type="text" name="invoice" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Price</label>
+                                <input type="text" name="price" class="form-control" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="">Select Option</label>
+                                <select class="form-select" aria-label="Default select example" name="option">
+                                    <option selected value="1">Embed Kit</option>
+                                    <option value="2">API</option>
+                                  </select>
+                            </div>
+                            <div class="mb-3 form-check">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Place Order</button>
+                        </form>
+                        @endif
+
+
+                        @yield('content')
+                    </div>
+               
+                
+                </div>
+
+        
+{{--         
+         <iframe id="sgoplus-iframe" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-forms" src="" scrolling="no" frameborder="0">
         </iframe>
         
         <script type="text/javascript" src="https://sandbox-kit.espay.id/public/signature/js"></script>
@@ -112,13 +149,43 @@
 
                 var data = {
                     key: "c120ee852ac32f5ef97077276ac10e6c",
-                    paymentId: "67747e2e6b219879563655eb012f77646b9792736f5693f2e44693fec5a67d26",
+                    paymentId: "123s",
                     backUrl: "http://127.0.0.1:8000/"
                 },
                 sgoPlusIframe = document.getElementById("sgoplus-iframe");
                 if (sgoPlusIframe !== null) sgoPlusIframe.src = SGOSignature.getIframeURL(data);
                 SGOSignature.receiveForm();
             };
-        </script> -->
+        </script>  --}}
+
+
+        <ul>
+            <li>this url is not working on postman method
+
+                <a href="https://sandbox-api.espay.id/rest/biller/inquirytransaction">
+                    https://sandbox-api.espay.id/rest/biller/inquirytransaction
+                </a>
+               
+            </li>
+            <li>
+                we already merchant by still having this error
+                Error : [0031] Rejected, Communication error with 
+                <a href="https://sandbox-portal.espay.id/">DASHBOARD</a>
+            </li>
+            <li>
+                what is the usage of this url
+
+                API JAVASCRIPT URL
+
+                Development : https://sandbox-kit.espay.id/public/signature/js
+                Production : https://kit.espay.id/public/signature/js
+
+            </li>
+
+            <li>    
+                NEED TO REQUEST A full work flow / demo using postman or embed kit
+            </li>
+        </ul>
     </body>
+    @stack('scripts')
 </html>

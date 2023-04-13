@@ -10,6 +10,7 @@ class PaymentController extends Controller
     private $returnUrl;
     private $baseUrl;
     public $invoiceId;
+    public $amount;
 
     public function __construct() {
         $this->espayMerchantKey = 'c120ee852ac32f5ef97077276ac10e6c';

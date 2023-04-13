@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/checkout', 'PaymentController@payNow');
+Route::post('/payment', 'CheckoutController@checkout');
