@@ -24,7 +24,7 @@ class CheckoutController extends Controller
         $salt = strtoupper("##$espaysignature##$invoice##$rq_datetime##$price##$ccy##$comm_code##$mode##");
         $signature = hash('sha256', $salt);
      
-     
+     //this is a comment
         if($option == 1) {
             
             return view('checkout', compact('price', 'invoice', 'option'));
