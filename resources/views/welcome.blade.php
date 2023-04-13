@@ -96,19 +96,29 @@
             </div>
         </div> --}}
 
-        <iframe id="sgoplus-iframe" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-forms" src="" scrolling="no" frameborder="0"></iframe>
+        <form id="myform" method="post" action="{{ url('/checkout') }}">
+        {{ csrf_field() }}
+            <input type="text" name="Invoice" value="P123"><br>
+            <input type="number" name="price" value="23"><br>
+            <input type="submit" name="Purchase">
+
+        </form>
+        <!-- <iframe id="sgoplus-iframe" sandbox="allow-same-origin allow-scripts allow-top-navigation allow-forms" src="" scrolling="no" frameborder="0">
+        </iframe>
+        
         <script type="text/javascript" src="https://sandbox-kit.espay.id/public/signature/js"></script>
         <script type="text/javascript">
             window.onload = function() {
+
                 var data = {
                     key: "c120ee852ac32f5ef97077276ac10e6c",
-                    paymentId: "1",
+                    paymentId: "67747e2e6b219879563655eb012f77646b9792736f5693f2e44693fec5a67d26",
                     backUrl: "http://127.0.0.1:8000/"
                 },
                 sgoPlusIframe = document.getElementById("sgoplus-iframe");
                 if (sgoPlusIframe !== null) sgoPlusIframe.src = SGOSignature.getIframeURL(data);
                 SGOSignature.receiveForm();
             };
-        </script>
+        </script> -->
     </body>
 </html>
